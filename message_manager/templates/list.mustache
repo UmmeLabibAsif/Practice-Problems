@@ -1,0 +1,29 @@
+{{#messages}}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Message</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#messages}}
+        <tr>
+            <td>{{message}}</td>
+            <td>
+                <a href="{{editurl}}" class="btn btn-warning">Edit</a>
+                <a href="{{deleteurl}}" class="btn btn-danger">Delete</a>
+                <a href="{{markreadurl}}" class="btn btn-success">
+                    {{#isread}}Read{{/isread}}{{^isread}}Mark as Read{{/isread}}
+                </a>
+            </td>
+        </tr>
+        {{/messages}}
+    </tbody>
+</table>
+{{/messages}}
+
+{{^messages}}
+<p>No messages found.</p>
+{{/messages}}
+
